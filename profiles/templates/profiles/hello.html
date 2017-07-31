@@ -1,0 +1,65 @@
+﻿{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RESA - SyncLink</title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/superhero-bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="col-md-7 col-md-offset-2" style="text-align: center;">Sync-Link</h1>
+        <section class="col-md-6">
+            <h4 style="text-align: center;">Name  </h4>
+        </section>
+        <section class="col-md-6">        
+            <div style="text-align: left;">
+                <h4>
+                    <input type="text" name="name">
+                </h4>
+            </div>
+        </section>
+        <section class="col-md-6">
+            <h4 style="text-align: center;">Field  </h4>
+        </section>
+        <section class="col-md-4">        
+            <div style="text-align: left;">
+                <h4>
+                    <input type="text" name="field">
+                </h4>
+            </div>
+        </section>
+        <section class="col-md-6">
+            <h4 style="text-align: center;">Department  </h4>
+        </section>
+        <section class="col-md-6">        
+            <div style="text-align: left;">
+                <h4>
+                    <input type="text" name="department">
+                </h4>
+            </div>
+        </section>
+        <section class="col-md-10 col-md-offset-5">
+            <a href="#" class="btn btn-danger">
+                Search
+            </a>
+        </section>
+    </div>
+    &nbsp
+    <div class="container">
+        <ol>
+        <h3>Recent Searches</h3>
+        {% for item in data_list %}
+            <li>
+                {{item.name}} - {{item.field}} - {{item.department}}
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+    
+    <!--  -->
+
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
